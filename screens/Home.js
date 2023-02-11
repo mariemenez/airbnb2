@@ -4,12 +4,13 @@ import {
   ActivityIndicator,
   SafeAreaView,
   ScrollView,
+  TouchableOpacity,
 } from "react-native";
 import style from "../style";
 import useFetch from "../hooks/useFetch";
 import RoomCard from "../components/RoomCard";
 
-export default function Home() {
+export default function Home({ navigation }) {
   const [data, isLoading] = useFetch("/rooms");
 
   return isLoading ? (
@@ -18,9 +19,16 @@ export default function Home() {
     <SafeAreaView>
       <ScrollView>
         <View style={style.container}>
-          <Text>Je suis la page home</Text>
           {data.map((item) => {
-            return <RoomCard title={item.title} />;
+            return (
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.navigate("Room", { id: item._id });
+                }}
+              >
+                <RoomCard title={item.title} image={item.photos[1].url} />
+              </TouchableOpacity>
+            );
           })}
         </View>
       </ScrollView>
