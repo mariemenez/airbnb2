@@ -16,7 +16,7 @@ import { AuthContext } from "../AuthContext";
 export default function Home({ navigation }) {
   const [data, isLoading] = useFetch("/rooms");
 
-  const [setUserToken] = useContext(AuthContext);
+  const [userToken, setUserToken] = useContext(AuthContext);
 
   return isLoading ? (
     <ActivityIndicator />
