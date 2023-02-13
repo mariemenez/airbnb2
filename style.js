@@ -26,4 +26,8 @@ export default StyleSheet.create({
   buttonText: {
     fontSize: 20,
   },
+  headerLogo: {
+    height: 25,
+    width: 25,
+  },
 });

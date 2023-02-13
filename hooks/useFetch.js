@@ -13,7 +13,7 @@ export default function useFetch(baseUrl) {
         setData(response.data);
         setIsLoading(false);
       } catch (error) {
-        console.log(reponse.message);
+        console.log(error.message);
       }
     };
     fetchData();
