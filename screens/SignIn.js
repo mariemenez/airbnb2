@@ -41,6 +41,7 @@ export default function SignIn() {
       </View>
       <View>
         <TextInput
+          autoCapitalize="none"
           style={style.textInput}
           value={email}
           onChangeText={(text) => {
@@ -48,6 +49,7 @@ export default function SignIn() {
           }}
         />
         <TextInput
+          autoCapitalize="none"
           style={style.textInput}
           value={password}
           onChangeText={(text) => {
