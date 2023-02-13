@@ -16,14 +16,13 @@ import { AuthContext } from "../AuthContext";
 export default function Home({ navigation }) {
   const [data, isLoading] = useFetch("/rooms");
 
-  const [userToken, setUserToken] = useContext(AuthContext);
+  const [setUserToken] = useContext(AuthContext);
 
   return isLoading ? (
     <ActivityIndicator />
   ) : (
     <SafeAreaView>
       <ScrollView>
-        {/* <Text>{userToken}</Text> */}
         <TouchableOpacity
           onPress={() => {
             setUserToken(null);
